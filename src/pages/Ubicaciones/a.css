@@ -1,0 +1,72 @@
+.rutaClinica{
+    width: 50%;
+    aspect-ratio: 14/6 ;
+    min-height: 50px;
+}
+.rutaExitoRo{
+    width: 50%;
+    aspect-ratio: 14/6 ;
+    min-height: 50px;
+}
+.rutaMayorca{
+    width: 50%;
+    aspect-ratio: 14/6 ;
+    min-height: 50px;
+}
+.rutaRionegro{
+    width: 50%;
+    aspect-ratio: 14/6 ;
+    min-height: 50px;
+}
+.rutaSanAntonio{
+    width: 50%;
+    aspect-ratio: 14/6 ;
+    min-height: 50px;
+}
+.rutaSofaABosque{
+    width: 50%;
+    aspect-ratio: 14/6 ;
+    min-height: 50px;
+}
+@media (max-width: 690px){
+    .rutaClinica{
+        margin-top: 15px;
+        margin-bottom: 30px;
+        width: 60%;
+        aspect-ratio: 4/3;
+    }
+    .rutaExitoRo{
+        margin-top: 15px;
+        margin-bottom: 30px;
+        width: 60%;
+        aspect-ratio: 4/3;
+    }
+    .rutaMayorca{
+        margin-top: 15px;
+        margin-bottom: 30px;
+        width: 60%;
+        aspect-ratio: 4/3;
+    }
+    .rutaRionegro{
+        margin-top: 15px;
+        margin-bottom: 30px;
+        width: 60%;
+        aspect-ratio: 4/3;
+    }
+    .rutaSanAntonio{
+        margin-top: 15px;
+        margin-bottom: 30px;
+        width: 60%;
+        aspect-ratio: 4/3;
+    }
+    .rutaSofaABosq{
+        margin-top: 15px;
+        margin-bottom: 30px;
+        width: 60%;
+        aspect-ratio: 4/3;
+    }
+    
+
+}
+
+
