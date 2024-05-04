@@ -11,7 +11,7 @@ export const Info = () => {
   axios.defaults.withCredentials = true;
 
   useEffect(() => {
-        axios.get('http://localhost:4000/info')
+        axios.get(import.meta.env.VITE_INFO_CHECK)
         .then(res => {
             if(res.data.Status === "Success"){
                 setAuth(true);     

@@ -10,7 +10,7 @@ export const Contacto = () => {
   const navigate=useNavigate();
   axios.defaults.withCredentials = true;
   useEffect(() => {
-        axios.get('http://localhost:4000/contacto')
+        axios.get(import.meta.env.VITE_CONTACTO_CHECK)
         .then(res => {
             if(res.data.Status === "Success"){
                 setAuth(true);

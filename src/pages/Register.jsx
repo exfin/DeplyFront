@@ -13,7 +13,7 @@ export const Register = () =>{
     const navigate = useNavigate();
     const handleSubmit = (event) =>{
         event.preventDefault();
-        axios.post('https://sitio-buses-backend.onrender.com/registro', values)
+        axios.post(import.meta.env.VITE_REGISTER_CHECK, values)
         .then(res => {
             if(res.data.Status === "Success"){
                 navigate('/login')

@@ -15,7 +15,7 @@ export const Login = () => {
 
     useEffect(() => {
         axios.defaults.withCredentials = true;  
-        axios.get('https://sitio-buses-backend.onrender.com/verify-token')
+        axios.get(import.meta.env.VITE_TOKEN_API)
             .then(response => {
                 if (response.data.Status === "Token valido") {
                     navigate('/ppal');  
@@ -31,7 +31,7 @@ export const Login = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('https://sitio-buses-backend.onrender.com/login', values)
+        axios.post(import.meta.env.VITE_LOGIN_CHECK, values)
             .then(res => {
                 if (res.data.Status === "Success") {
                     navigate('/ppal');

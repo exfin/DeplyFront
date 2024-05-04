@@ -27,7 +27,7 @@ export const Cuenta = () => {
     axios.defaults.withCredentials = true;
 
     useEffect(() => {
-        axios.get('http://localhost:4000/cuenta')
+        axios.get(import.meta.env.VITE_CUENTA_CHECK)
         .then(res => {
             if(res.data.Status === "Success"){
                 setAuth(true);
@@ -49,7 +49,7 @@ export const Cuenta = () => {
         
     },[])
     const handleDelete = () => {
-        axios.get('http://localhost:4000/logout')
+        axios.get(import.meta.env.VITE_LOGOUT_CHECK)
         .then(res =>{
             location.reload(true);
         }).catch(err => console.log(err));

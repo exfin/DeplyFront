@@ -19,7 +19,7 @@ export const Home = () => {
   axios.defaults.withCredentials = true;
 
   useEffect(() => {
-        axios.get('http://localhost:4000/ppal')
+        axios.get(import.meta.env.VITE_PPAL_CHECK)
         .then(res => {
             if(res.data.Status === "Success"){
                 setAuth(true);   
