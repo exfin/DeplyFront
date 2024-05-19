@@ -5,7 +5,7 @@ function RutaPredeterminada() {
   const mapRef = useRef(null); // Reference to the div element where the map will be
 
   useEffect(() => {
-    // Dynamically load the Google Maps script
+    
     const loadGoogleMapsScript = () => {
       if (window.google) {
         initializeMap();
@@ -19,24 +19,23 @@ function RutaPredeterminada() {
       }
     };
 
-    // Initialize the map and add markers
     const initializeMap = () => {
       const map = new window.google.maps.Map(mapRef.current, {
         zoom: 11,
-        center: { lat: 6.200982, lng: -75.575090 }, // A central point for the map
+        center: { lat: 6.200982, lng: -75.575090 }, 
       });
 
-      // Marker colors for each route
+      
       const colors = {
-        clinica: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-        mayorca: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-        sanAntonio: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-        rionegro: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
-        exitoRobledo: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',
-        bosques: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png' // Adding orange for the Bosques route
+        clinica: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+        mayorca: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+        sanAntonio: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
+        rionegro: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+        exitoRobledo: 'https://maps.google.com/mapfiles/ms/icons/purple-dot.png',
+        bosques: 'https://maps.google.com/mapfiles/ms/icons/orange-dot.png' 
       };
 
-      // All stops from all routes, with specific color for each route
+     
       const allStops = [
         // Ruta Rionegro
         { lat: 6.178285, lng: -75.367920, title: "Sector Belén Rionegro", route: "rionegro" },//
@@ -114,7 +113,7 @@ function RutaPredeterminada() {
         { lat: 6.156926, lng: -75.518177, title: "EIA Las Palmas", route: "bosques" },
     ];
 
-      // Add markers to the map
+      
       allStops.forEach(function(stop) {
         const marker = new google.maps.Marker({
           position: { lat: stop.lat, lng: stop.lng },
