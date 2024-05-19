@@ -1,13 +1,5 @@
-"use client";
-import React from 'react'
-import './a.css'
-import {
-  APIProvider,
-  Map,
-  AdvancedMarker,
-  Pin,
-  InfoWindow,
-} from "@vis.gl/react-google-maps"
+import React, { useEffect, useRef, useState } from 'react';
+import './a.css';
 
 function RSOABosque () {
   const mapRef = useRef(null); // Reference to the div element where the map will be
