@@ -34,7 +34,7 @@ function RCLinica() {
     };
 
     // Setup the SSE connection
-    const eventSource = new EventSource(import.meta.env.VITE_EVENT_SOURCE);
+    const eventSource = new EventSource(import.meta.env.VITE_EVENT_SOURCE_CLINICA);
     eventSource.onmessage = function(event) {
       const data = JSON.parse(event.data);
       addMarker(data);
