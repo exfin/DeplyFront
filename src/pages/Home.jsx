@@ -11,6 +11,7 @@ import RutaMayorca from './Ubicaciones/RMAyorca.jsx'
 import RutaRionegro from './Ubicaciones/RRionegro.jsx'
 import RutaSanAn from './Ubicaciones/RSanAntonio.jsx'
 import RutaSOABosq from './Ubicaciones/RSOABosque.jsx'
+import RutaPredeterminada from './Ubicaciones/RutaPredeterminada.jsx';
 
 export const Home = () => {
   const [auth , setAuth] = useState(false);
@@ -35,7 +36,7 @@ export const Home = () => {
             navigate('/login');
         });        
   },[])
-  const[ruta, setRuta] = useState("Ruta predeterminada");
+  const[ruta, setRuta] = useState("preder");
   const handleOnChange =(e) =>{
     const seleccionado= e.target.value;
     console.log(seleccionado);
@@ -49,7 +50,7 @@ export const Home = () => {
         <Navbar className='A'></Navbar>
         <div className='barra' >
           <select  className='opciones' value={ruta} onChange={(e)=>(handleOnChange(e))}>
-            <option className='opcion'value='preder'>Ruta Predeterminada</option>
+            <option className='opcion'value='preder'>Rutas</option>
             <option className='opcion' value='clinica'>Ruta Clinica</option>
             <option className='opcion' value='exito'>Ruta Exito-Robledo</option>
             <option className='opcion' value='mayorca'>Ruta Mayorca</option>
@@ -60,7 +61,7 @@ export const Home = () => {
         </div>
         <div className='rectangulo'>
             {
-              ruta == 'preder' && (<p>Prederterminada</p>)
+              ruta == 'preder' && (<RutaPredeterminada></RutaPredeterminada>)
             }
             {
               ruta == 'clinica' && (<RutaClinica></RutaClinica>)
