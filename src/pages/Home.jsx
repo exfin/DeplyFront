@@ -115,14 +115,16 @@ export const Home = () => {
               <br></br>
               <p>hora de llegada</p>
             </article>
-            <div className='ubiSec'></div>
+           
+            {ruta === 'clinica' ? <RutaExitoRo /> : (ruta !== 'preder' && ruta !== 'rionegro' && <RutaClinica />)}
+            
+            {ruta !== 'preder' && ruta !== 'rionegro' && (
             <article className='tiempo'>
-              <h3 className='nombreBus'>
-                  Ruta alternativa
-              </h3>
+              <h3 className='nombreBus'>Ruta Alternativa</h3>
               <br></br>
-              <p>hora de llegada</p>
+             
             </article>
+            )}
         </div>
      </div>
      <Footer></Footer>
