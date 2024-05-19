@@ -44,15 +44,21 @@ function RCLinica() {
 
     // Function to add a marker to the map
     const addMarker = (data) => {
-      if (data.latitude && data.longitude && map.current) {
-        const newMarker = new window.google.maps.Marker({
-          position: { lat: data.latitude, lng: data.longitude },
-          map: map.current,
-          title: data.title || 'New Marker'
-        });
-        markers.current.push(newMarker); // Keep track of the marker
+      const latitude = parseFloat(data.latitude);
+      const longitude = parseFloat(data.longitude);
+  
+      if (!isNaN(latitude) && !isNaN(longitude)) {
+          const newMarker = new window.google.maps.Marker({
+              position: { lat: latitude, lng: longitude },
+              map: map.current,
+              title: 'New Location'
+          });
+          markers.current.push(newMarker);
+      } else {
+          console.error('Invalid latitude or longitude');
       }
-    };
+  };
+  
 
     // Clean up on component unmount
     return () => {
