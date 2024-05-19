@@ -31,6 +31,29 @@ function RExitoRo () {
         zoom: 11,
         center: { lat: 6.2476, lng: -75.5658 },
       });
+      const rutaExitoRobledoStops = [
+        { lat: 6.241547, lng: -75.602736, title: "Éxito de Robledo" },
+        { lat: 6.263281, lng: -75.596611, title: "Rotonda de Colombia con la 80"},
+        { lat: 6.259992, lng: -75.590388, title: "Avenida Centenario" },
+        { lat: 6.256659, lng: -75.592041, title: "Centro Comercial Obelisco" },
+        { lat: 6.258594, lng: -75.596132, title: "Carrera 78" },
+        { lat: 6.246131, lng: -75.577173, title: "Edificio Inteligente" },
+        { lat: 6.238305, lng: -75.573229, title: "Paradero de Exposiciones" },
+        { lat: 6.237100, lng: -75.569929, title: "San Diego" },
+        { lat: 6.227603, lng: -75.564595, title: "Loma El Indio" },
+        { lat: 6.171274, lng: -75.546824, title: "Palmas" },
+        { lat: 6.153486, lng: -75.532917, title: "Mall Indiana / Alto de Palmas" },
+        { lat: 6.156926, lng: -75.518177, title: "EIA Las Palmas" },
+    ];
+
+    rutaExitoRobledoStops.forEach(function(stop) {
+        const marker = new google.maps.Marker({
+            position: { lat: stop.lat, lng: stop.lng },
+            map: map,
+            icon: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',
+            title: stop.title
+        });
+    });
     };
 
     // Setup the SSE connection

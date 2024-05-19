@@ -31,6 +31,32 @@ function RMAyorca () {
         zoom: 11,
         center: { lat: 6.2476, lng: -75.5658 },
       });
+      
+      const rutaMayorcaStops = [
+        { lat: 6.162508, lng: -75.6052413, title: "Paradero Centro Comercial Mayorca", route: "mayorca" },
+        { lat: 6.177702, lng: -75.595260, title: "Viva Envigado", route: "mayorca" },
+        { lat: 6.173689, lng: -75.596990, title: "Barrio Alcalá", route: "mayorca" },
+        { lat: 6.168286, lng: -75.588198, title: "Esquina Carrera 42, sector Guanteros", route: "mayorca" },
+        { lat: 6.164881, lng: -75.583104, title: "Carrera 33, lugar conocido como Famidrogas", route: "mayorca" },
+        { lat: 6.160037, lng: -75.579685, title: "Sector Camino Verde, cerca al Hospital Manuel Uribe Ángel", route: "mayorca" },
+        { lat: 6.164158, lng: -75.574841, title: "Centro Comercial City Plaza", route: "mayorca" },
+        { lat: 6.180823, lng: -75.568105, title: "Mall San Lucas", route: "mayorca" },
+        { lat: 6.186966, lng: -75.561448, title: "Loma Los Balsos", route: "mayorca" },
+        { lat: 6.185159, lng: -75.553037, title: "Glorieta Parque Roa", route: "mayorca" },
+        { lat: 6.153486, lng: -75.532917, title: "Mall Indiana / Alto de Palmas", route: "mayorca" },
+        { lat: 6.156926, lng: -75.518177, title: "EIA Las Palmas", route: "mayorca" },
+    ];
+
+    rutaMayorcaStops.forEach(function(stop) {
+        const marker = new google.maps.Marker({
+            position: { lat: stop.lat, lng: stop.lng },
+            map: map,
+            icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+            title: stop.title
+        });
+    });
+      
+
     };
 
     // Setup the SSE connection

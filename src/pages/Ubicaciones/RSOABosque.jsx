@@ -31,6 +31,27 @@ function RSOABosque () {
         zoom: 11,
         center: { lat: 6.2476, lng: -75.5658 },
       });
+
+      const rutaBosquesStops = [
+        { lat: 6.180583, lng: -75.581105, title: "Bahía Calle 25 Sur", route: "bosques" },
+        { lat: 6.184739, lng: -75.582513, title: "Clínica Especialidades Oftalmológicas", route: "bosques" },
+        { lat: 6.183178, lng: -75.579842, title: "Supermercado Euro La Frontera", route: "bosques" },
+        { lat: 6.180823, lng: -75.568105, title: "Mall San Lucas", route: "bosques" },
+        { lat: 6.186839, lng: -75.561954, title: "Complex de Los Balsos", route: "bosques" },
+        { lat: 6.184179, lng: -75.547467, title: "Restaurante Marmoleo", route: "bosques" },
+        { lat: 6.171274, lng: -75.546824, title: "Palmas", route: "bosques" },
+        { lat: 6.153486, lng: -75.532917, title: "Mall Indiana / Alto de Palmas", route: "bosques" },
+        { lat: 6.156926, lng: -75.518177, title: "EIA Las Palmas", route: "bosques" },
+    ];
+
+    rutaBosquesStops.forEach(function(stop) {
+        const marker = new google.maps.Marker({
+            position: { lat: stop.lat, lng: stop.lng },
+            map: map,
+            icon: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png',
+            title: stop.title
+        });
+    });
     };
 
     // Setup the SSE connection

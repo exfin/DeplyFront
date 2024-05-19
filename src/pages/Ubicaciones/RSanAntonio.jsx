@@ -31,6 +31,25 @@ function RSanAntonio () {
         zoom: 11,
         center: { lat: 6.2476, lng: -75.5658 },
       });
+
+      const rutaSanAntonioStops = [
+        { lat: 6.245780, lng: -75.566976, title: "Parque San Antonio", route: "sanAntonio" },
+        { lat: 6.244277, lng: -75.563788, title: "Torres de Bomboná", route: "sanAntonio" },
+        { lat: 6.235169, lng: -75.555392, title: "Parque de La Milagrosa", route: "sanAntonio" },
+        { lat: 6.221456, lng: -75.559919, title: "La Isla", route: "sanAntonio" },
+        { lat: 6.171274, lng: -75.546824, title: "Palmas", route: "sanAntonio" },
+        { lat: 6.153486, lng: -75.532917, title: "Mall Indiana / Alto de Palmas", route: "sanAntonio" },
+        { lat: 6.156926, lng: -75.518177, title: "EIA Las Palmas", route: "sanAntonio" },
+    ];
+
+    rutaSanAntonioStops.forEach(function(stop) {
+        const marker = new google.maps.Marker({
+            position: { lat: stop.lat, lng: stop.lng },
+            map: map,
+            icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+            title: stop.title
+        });
+    });
     };
 
     // Setup the SSE connection

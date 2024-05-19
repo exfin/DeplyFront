@@ -31,7 +31,29 @@ function RCLinica() {
         zoom: 11,
         center: { lat: 6.2476, lng: -75.5658 },
       });
+
+      const rutaClinicaStops = [
+        { lat: 6.211745, lng: -75.594203, title: "Clínica Las Américas" },
+        { lat: 6.238489, lng: -75.603002, title: "Glorieta Santa Gema" },
+        { lat: 6.239123, lng: -75.590589, title: "Solo Kukos / Palace" },
+        { lat: 6.237100, lng: -75.569929, title: "San Diego" },
+        { lat: 6.195436, lng: -75.547296, title: "Mirador Palmas" },
+        { lat: 6.171274, lng: -75.546824, title: "Palmas" },
+        { lat: 6.153486, lng: -75.532917, title: "Mall Indiana / Alto de Palmas" },
+        { lat: 6.156926, lng: -75.518177, title: "EIA Las Palmas" },
+    ];
+
+    rutaClinicaStops.forEach(function(stop) {
+        const marker = new google.maps.Marker({
+            position: { lat: stop.lat, lng: stop.lng },
+            map: map,
+            icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+            title: stop.title
+        });
+    });
     };
+    
+
 
     // Setup the SSE connection
     const eventSource = new EventSource(import.meta.env.VITE_EVENT_SOURCE_CLINICA);
