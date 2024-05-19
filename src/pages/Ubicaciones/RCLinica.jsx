@@ -46,6 +46,8 @@ function RCLinica() {
     const addMarker = (data) => {
       const latitude = parseFloat(data.latitude);
       const longitude = parseFloat(data.longitude);
+      console.log(latitude);
+      console.log(longitude);
   
       if (!isNaN(latitude) && !isNaN(longitude)) {
           const newMarker = new window.google.maps.Marker({
