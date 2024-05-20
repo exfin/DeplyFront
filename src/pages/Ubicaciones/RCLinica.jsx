@@ -2,12 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import './a.css';
 
 function RCLinica() {
-  const mapRef = useRef(null); // Reference to the div element where the map will be
-  const map = useRef(null); // Reference to the Google Maps object
-  const markers = useRef([]); // Reference to the list of markers
+  const mapRef = useRef(null); // El div del mapa
+  const map = useRef(null); // Objeto mapa
+  const markers = useRef([]); // Lista de los marcadores
 
   useEffect(() => {
-    // Dynamically load the Google Maps script
+   
     const loadGoogleMapsScript = () => {
       if (window.google && mapRef.current && !map.current) {
         initializeMap();
@@ -25,7 +25,7 @@ function RCLinica() {
       }
     };
 
-    // Initialize the map
+    
     const initializeMap = () => {
       map.current = new window.google.maps.Map(mapRef.current, {
         zoom: 11,
@@ -33,7 +33,6 @@ function RCLinica() {
       });
     };
 
-    // Setup the SSE connection
     const eventSource = new EventSource(import.meta.env.VITE_EVENT_SOURCE_CLINICA);
     eventSource.onmessage = function(event) {
       const data = JSON.parse(event.data);
@@ -42,7 +41,7 @@ function RCLinica() {
 
     loadGoogleMapsScript();
 
-    // Function to add a marker to the map
+    
     const addMarker = (data) => {
       const latitude = parseFloat(data.latitude);
       const longitude = parseFloat(data.longitude);
@@ -62,7 +61,7 @@ function RCLinica() {
   };
   
 
-    // Clean up on component unmount
+    
     return () => {
       eventSource.close();
       const scripts = document.querySelectorAll('script');

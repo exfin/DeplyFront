@@ -2,12 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import './a.css';
 
 function RRionegro () {
-  const mapRef = useRef(null); // Reference to the div element where the map will be
-  const map = useRef(null); // Reference to the Google Maps object
-  const markers = useRef([]); // Reference to the list of markers
+  const mapRef = useRef(null); 
+  const map = useRef(null); 
+  const markers = useRef([]); 
 
   useEffect(() => {
-    // Dynamically load the Google Maps script
+    
     const loadGoogleMapsScript = () => {
       if (window.google && mapRef.current && !map.current) {
         initializeMap();
@@ -25,7 +25,7 @@ function RRionegro () {
       }
     };
 
-    // Initialize the map
+    
     const initializeMap = () => {
       map.current = new window.google.maps.Map(mapRef.current, {
         zoom: 11,
@@ -33,7 +33,7 @@ function RRionegro () {
       });
     };
 
-    // Setup the SSE connection
+    
     const eventSource = new EventSource(import.meta.env.VITE_EVENT_SOURCE_RIONEGRO);
     eventSource.onmessage = function(event) {
       const data = JSON.parse(event.data);
@@ -42,7 +42,7 @@ function RRionegro () {
 
     loadGoogleMapsScript();
 
-    // Function to add a marker to the map
+    
     const addMarker = (data) => {
       const latitude = parseFloat(data.latitude);
       const longitude = parseFloat(data.longitude);
@@ -59,8 +59,6 @@ function RRionegro () {
       }
   };
   
-
-    // Clean up on component unmount
     return () => {
       eventSource.close();
       const scripts = document.querySelectorAll('script');

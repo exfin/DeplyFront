@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './a.css';
 
 function RutaPredeterminada() {
-  const mapRef = useRef(null); // Reference to the div element where the map will be
+  const mapRef = useRef(null); 
 
   useEffect(() => {
     
@@ -126,7 +126,7 @@ function RutaPredeterminada() {
 
     loadGoogleMapsScript();
 
-    // Clean up the script tag on component unmount
+    
     return () => {
       const scripts = document.querySelectorAll('script');
       for (let script of scripts) {
